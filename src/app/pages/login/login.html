@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div>
+    <div>
+        <h2>Employee Leave Management System</h2>
+        <p>Please enter your email and password to login</p>
+    </div>
+
+    <form>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" [(ngModel)]="loginForm.emailId" id="email" name="emailId">
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" [(ngModel)]="loginForm.password" id="password" name="password">
+        </div>
+
+        <div>
+            <label for="remember-me">
+                <input type="checkbox" id="remember-me" name="rememberMe">
+                Remember me
+            </label>
+        </div>
+
+        <button type="button" (click)="onLogin()">Login</button>
+    </form>
+
+    <a href="/" routerLink="/register">Forgot Password?</a>
+</div>
