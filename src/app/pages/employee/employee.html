@@ -1,1 +1,37 @@
 <p>employee works!</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Department ID</th>
+            <th>Department Name</th>
+            <th>Contact No</th>
+            <th>Email ID</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of employeeList; track $index) {
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ item.employeeId }}</td>
+            <td>{{ item.employeeName }}</td>
+            <td>{{ item.deptId }}</td>
+            <td>{{ item.deptName }}</td>
+            <td>{{ item.contactNo }}</td>
+            <td>{{ item.emailId }}</td>
+            <td>{{ item.role }}</td>
+            <td>
+                <button class="btn btn-primary">Edit</button> |
+                <button class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<p>This is a test.</p>

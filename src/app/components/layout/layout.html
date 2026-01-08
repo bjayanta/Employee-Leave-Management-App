@@ -1,1 +1,12 @@
-<p>layout works!</p>
+<main>
+    <nav>
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/employees">Employees</a>
+        <a routerLink="/leaves">Leaves</a> |
+        <button (click)="logoff()">Logout</button>
+    </nav>
+
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+</main>
