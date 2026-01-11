@@ -1,5 +1,67 @@
 <p>employee works!</p>
 
+<button class="btn btn-primary" (click)="openModal()">Add Employee</button>
+
+<div #employeeModal style="display: none;">
+    <div>
+        <h4>Add Employee</h4>
+        <button type="button" class="close" (click)="closeModal()">&times;</button>
+    </div>
+    <div>
+        <form>
+            <div>
+                <label>Employee Name</label>
+                <input type="text" required>
+            </div>
+            <div>
+                <label>Contact Number</label>
+                <input type="text" required>
+            </div>
+            <div>
+                <label>Email ID</label>
+                <input type="email" required>
+            </div>
+            <div>
+                <label>Department</label>
+                <select required>
+                    <option value="" disabled>Select Department</option>
+                    @for (item of deptList(); track $index) {
+                        <option [value]="item.deptId">{{ item.deptName }}</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" required>
+            </div>
+            <div>
+                <label>Gender</label>
+                <select required>
+                    <option value="" disabled>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label>Role</label>
+                <select required>
+                    <option value="" disabled>Select Role</option>
+                    @for (item of roleList$ | async; track $index) {
+                        <option [value]="item">{{ item }}</option>
+                    }
+                </select>
+                <!-- <div>
+                    {{ roleList$ | async | json }}
+                </div> -->
+            </div>
+        </form>
+    </div>
+    <div>
+        <button type="button">Close</button>
+        <button type="button">Save</button>
+    </div>
+</div>
+
 <table>
     <thead>
         <tr>
@@ -15,7 +77,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (item of employeeList; track $index) {
+        @for (item of employeeList(); track $index) {
         <tr>
             <td>{{ $index + 1 }}</td>
             <td>{{ item.employeeId }}</td>
@@ -34,4 +96,3 @@
     </tbody>
 </table>
 
-<p>This is a test.</p>
