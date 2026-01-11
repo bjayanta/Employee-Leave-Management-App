@@ -30,4 +30,14 @@ export class EmployeeService {
     );
   }
 
+  getAllTests() {
+    return this.http.get<APIResponseModel>(`${this.baseUrl}/GetDepartments`).pipe(
+      map((res: APIResponseModel) => res.data)
+    );
+  }
+
+  onCreateEmployee(data: any) {
+    return this.http.post(`${this.baseUrl}/CreateEmployee`, data)
+  }
+
 }

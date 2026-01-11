@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { EmployeeModel } from '../../models/Employee.model';
+import { SigninModel } from '../../models/Employee.model';
 import { EmployeeService } from '../../services/employee';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class Login {
 
-  loginForm: EmployeeModel = new EmployeeModel();
+  loginForm: SigninModel = new SigninModel();
 
   employeeService = inject(EmployeeService);
   router = inject(Router);
